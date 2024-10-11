@@ -1,11 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "_bcghmpqrsv",
+  0: "_bcdeghmpqrsv",
   1: "q",
   2: "q",
   3: "mpq",
   4: "_gqrs",
-  5: "bcpqrsv",
+  5: "bcdepqrsv",
   6: "ghr"
 };
 

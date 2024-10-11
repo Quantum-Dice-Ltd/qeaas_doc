@@ -26,13 +26,13 @@ var NAVTREE =
 [
   [ "Quantum Dice QEaaS API", "index.html", [
     [ "Home", "index.html", null ],
-    [ "Getting Started", "md_pages_page_1_gettingstarted.html", null ],
-    [ "Running python demo", "md_pages_page_2_runningpythondemo.html", null ],
-    [ "Running CPP demo", "md_pages_page_3_runningcppdemo.html", null ],
-    [ "Running Numpy demo", "md_pages_page_4_runningnumpydemo.html", null ],
-    [ "How to add Quantum Dice randomness to the Linux /dev/random pool", "md_pages_page_how_to_add_qdrandomness_to_linux.html", null ],
-    [ "How to get Client Certificate", "md_pages_page_how_to_generate_client_certificate.html", null ],
-    [ "How to use Quantum Dice randomness in your own code", "md_pages_page_how_to_use_qd_randomness_in_code.html", null ],
+    [ "Getting Started", "page-gettingstarted.html", null ],
+    [ "Running python demo", "page-runningpythondemo.html", null ],
+    [ "Running CPP demo", "page-runningcppdemo.html", null ],
+    [ "Running Numpy demo", "page-page-runningnumpydemo.html", null ],
+    [ "How to add Quantum Dice randomness to the Linux /dev/random pool", "page-addingqdrandomnesstolinux.html", null ],
+    [ "How to get Client Certificate", "page-generatingclientcertificatedetails.html", null ],
+    [ "How to use Quantum Dice randomness in your own code", "page-usingqdrandomnessincode.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

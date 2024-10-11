@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['getrandbits_0',['getrandbits',['../classqdremrand_1_1_q_d_rem_rand.html#a7fb529f93b39865be9b0f50a76efac73',1,'qdremrand::QDRemRand']]],
-  ['getstate_1',['getstate',['../classqdremrand_1_1_q_d_rem_rand.html#ae2a7affd1f3cd62222556c177ff33997',1,'qdremrand::QDRemRand']]]
+  ['getrandbits_0',['getrandbits',['../classqdremrand_1_1_q_d_rem_rand.html#a2a3638bfc4e951e1779d1b739fa6bbee',1,'qdremrand::QDRemRand']]],
+  ['getstate_1',['getstate',['../classqdremrand_1_1_q_d_rem_rand.html#a42c431d67192ccd3b5f41e53a2427bcf',1,'qdremrand::QDRemRand']]]
 ];
