@@ -1,4 +1,32 @@
 var searchData=
 [
-  ['data_0',['data',['../structqdrandom.html#a452197b783e2154bfb867fe34c4e7067',1,'qdrandom']]]
+  ['c_20code_0',['C code',['../page-usingqdrandomnessincode.html#autotoc_md34',1,'Using Quantum Dice randomness in C code'],['../page-usingqdrandomnessincode.html#autotoc_md35',1,'Using Quantum Dice randomness in C++ code']]],
+  ['can_20be_20certain_20that_20someone_20connecting_20is_20really_20you_1',['How Quantum Dice can be certain that someone connecting is really you',['../page-generatingclientcertificatedetails.html#autotoc_md20',1,'']]],
+  ['can_20be_20certain_20that_20you_20are_20connecting_20to_20a_20legitimate_20server_2',['How you can be certain that you are connecting to a legitimate server',['../page-generatingclientcertificatedetails.html#autotoc_md19',1,'']]],
+  ['ce_3',['Run qdremdemo-ce',['../page-runningcppdemo.html#autotoc_md13',1,'']]],
+  ['certain_20that_20someone_20connecting_20is_20really_20you_4',['How Quantum Dice can be certain that someone connecting is really you',['../page-generatingclientcertificatedetails.html#autotoc_md20',1,'']]],
+  ['certain_20that_20you_20are_20connecting_20to_20a_20legitimate_20server_5',['How you can be certain that you are connecting to a legitimate server',['../page-generatingclientcertificatedetails.html#autotoc_md19',1,'']]],
+  ['certificate_6',['How to get Client Certificate',['../page-generatingclientcertificatedetails.html',1,'']]],
+  ['certificate_7',['certificate',['../page-gettingstarted.html#autotoc_md4',1,'Getting a client certificate'],['../page-generatingclientcertificatedetails.html#autotoc_md21',1,'Procedures for getting a client certificate']]],
+  ['certificate_20chain_20directly_8',['Use the certificate chain directly',['../page-generatingclientcertificatedetails.html#autotoc_md26',1,'']]],
+  ['certificate_20chain_20file_20from_20quantum_20dice_9',['Receive the certificate chain file from Quantum Dice',['../page-generatingclientcertificatedetails.html#autotoc_md25',1,'']]],
+  ['certificate_20signing_20request_10',['Create a certificate signing request',['../page-generatingclientcertificatedetails.html#autotoc_md23',1,'']]],
+  ['certificate_20to_20sign_20subordinate_20certificates_11',['Use the certificate to sign subordinate certificates',['../page-generatingclientcertificatedetails.html#autotoc_md28',1,'']]],
+  ['certificates_12',['certificates',['../page-generatingclientcertificatedetails.html#autotoc_md17',1,'How TLS uses certificates'],['../page-generatingclientcertificatedetails.html#autotoc_md28',1,'Use the certificate to sign subordinate certificates']]],
+  ['certificates_20and_20keys_13',['The importance of secrecy and availability for certificates and keys',['../page-generatingclientcertificatedetails.html#autotoc_md30',1,'']]],
+  ['certificates_20with_20tls_14',['How Quantum Dice uses certificates with TLS',['../page-generatingclientcertificatedetails.html#autotoc_md18',1,'']]],
+  ['certificates_20work_15',['How certificates work',['../page-generatingclientcertificatedetails.html#autotoc_md29',1,'']]],
+  ['chain_20directly_16',['Use the certificate chain directly',['../page-generatingclientcertificatedetails.html#autotoc_md26',1,'']]],
+  ['chain_20file_20from_20quantum_20dice_17',['Receive the certificate chain file from Quantum Dice',['../page-generatingclientcertificatedetails.html#autotoc_md25',1,'']]],
+  ['client_20certificate_18',['How to get Client Certificate',['../page-generatingclientcertificatedetails.html',1,'']]],
+  ['client_20certificate_19',['client certificate',['../page-gettingstarted.html#autotoc_md4',1,'Getting a client certificate'],['../page-generatingclientcertificatedetails.html#autotoc_md21',1,'Procedures for getting a client certificate']]],
+  ['code_20',['code',['../page-usingqdrandomnessincode.html',1,'How to use Quantum Dice randomness in your own code'],['../page-usingqdrandomnessincode.html#autotoc_md34',1,'Using Quantum Dice randomness in C code'],['../page-usingqdrandomnessincode.html#autotoc_md35',1,'Using Quantum Dice randomness in C++ code'],['../page-usingqdrandomnessincode.html#autotoc_md36',1,'Using Quantum Dice randomness in python code']]],
+  ['connect_21',['connect',['../class_qdremrand.html#a4503f5560d79a9ac379c4a68929d7573',1,'Qdremrand']]],
+  ['connecting_20is_20really_20you_22',['How Quantum Dice can be certain that someone connecting is really you',['../page-generatingclientcertificatedetails.html#autotoc_md20',1,'']]],
+  ['connecting_20to_20a_20legitimate_20server_23',['How you can be certain that you are connecting to a legitimate server',['../page-generatingclientcertificatedetails.html#autotoc_md19',1,'']]],
+  ['consequences_24',['Asymmetry of consequences',['../page-generatingclientcertificatedetails.html#autotoc_md33',1,'']]],
+  ['cpp_20demo_25',['Running CPP demo',['../page-runningcppdemo.html',1,'']]],
+  ['create_20a_20certificate_20signing_20request_26',['Create a certificate signing request',['../page-generatingclientcertificatedetails.html#autotoc_md23',1,'']]],
+  ['csr_20to_20quantum_20dice_27',['Send the CSR to Quantum Dice',['../page-generatingclientcertificatedetails.html#autotoc_md24',1,'']]],
+  ['ctx_28',['ctx',['../struct_q_d_r_e_m_r_a_n_d.html#ad5433bcc8a463fb4df3ce5912bb11fe3',1,'QDREMRAND']]]
 ];

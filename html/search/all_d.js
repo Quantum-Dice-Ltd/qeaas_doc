@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['_7eqdremrand_0',['~Qdremrand',['../class_qdremrand.html#abd602ee3d1e1dde47b87b50e8b362fa8',1,'Qdremrand']]]
+  ['next_20steps_0',['Next steps',['../page-gettingstarted.html#autotoc_md5',1,'']]],
+  ['norm_1',['Run qdremdemo-norm',['../page-runningcppdemo.html#autotoc_md14',1,'']]],
+  ['numpy_2',['Use with numpy',['../page-usingqdrandomnessincode.html#autotoc_md37',1,'']]],
+  ['numpy_20demo_3',['Running Numpy demo',['../page-page-runningnumpydemo.html',1,'']]]
 ];

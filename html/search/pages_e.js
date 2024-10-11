@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['use_20quantum_20dice_20randomness_20in_20your_20own_20code_0',['How to use Quantum Dice randomness in your own code',['../page-usingqdrandomnessincode.html',1,'']]]
+];
