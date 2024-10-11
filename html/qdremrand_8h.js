@@ -2,6 +2,7 @@ var qdremrand_8h =
 [
     [ "QDREMRAND", "struct_q_d_r_e_m_r_a_n_d.html", "struct_q_d_r_e_m_r_a_n_d" ],
     [ "qdrandom", "structqdrandom.html", "structqdrandom" ],
+    [ "Qdremrand", "class_qdremrand.html", "class_qdremrand" ],
     [ "qdremrand", "qdremrand_8h.html#aadff689da7cadcd8f4d2e3874aabe8bd", null ],
     [ "qdremrand_connect", "qdremrand_8h.html#a12848803e115d9595f4154514aaf2e15", null ],
     [ "qdremrand_dtor", "qdremrand_8h.html#a8c116b76d40c7bc7298f52db29a535d7", null ],

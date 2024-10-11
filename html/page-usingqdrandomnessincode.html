@@ -148,21 +148,24 @@ Using Quantum Dice randomness in C++ code</h2>
 <p>You can use the demo programs to see how you can use the randomness in your own code.</p>
 <ol type="1">
 <li><p class="startli">In qdremdemo.cpp it initialises the connection to the EaaS server with:</p>
-<div class="fragment"><div class="line">Qdremrand qdr;</div>
-<div class="line"><span class="keywordflow">if</span> (qdr.connect(rem_host, rem_port, peer_cert, my_cert, my_key)) {</div>
+<div class="fragment"><div class="line"><a class="code hl_class" href="class_qdremrand.html">Qdremrand</a> qdr;</div>
+<div class="line"><span class="keywordflow">if</span> (qdr.<a class="code hl_function" href="class_qdremrand.html#a4503f5560d79a9ac379c4a68929d7573">connect</a>(rem_host, rem_port, peer_cert, my_cert, my_key)) {</div>
 <div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Cannot connect to QD remote randomness\n&quot;</span>;</div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">}</div>
+<div class="ttc" id="aclass_qdremrand_html"><div class="ttname"><a href="class_qdremrand.html">Qdremrand</a></div><div class="ttdoc">C++ wrapper class for the QDREMRAND functionality.</div><div class="ttdef"><b>Definition</b> qdremrand.h:166</div></div>
+<div class="ttc" id="aclass_qdremrand_html_a4503f5560d79a9ac379c4a68929d7573"><div class="ttname"><a href="class_qdremrand.html#a4503f5560d79a9ac379c4a68929d7573">Qdremrand::connect</a></div><div class="ttdeci">int connect(const char *rem_host, const char *rem_port, const char *peer_cert_file, const char *my_chain_file, const char *my_key_file)</div><div class="ttdef"><b>Definition</b> qdremrand.h:171</div></div>
 </div><!-- fragment --><p class="startli">and gets blocks of random bytes with:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> randbuf[64000];</div>
-<div class="line">    ssize_t got = qdr.getrand(randbuf, <span class="keyword">sizeof</span>(randbuf));</div>
+<div class="line">    ssize_t got = qdr.<a class="code hl_function" href="class_qdremrand.html#af6ea9765138ab65aeee2223d439b607a">getrand</a>(randbuf, <span class="keyword">sizeof</span>(randbuf));</div>
 <div class="line">    <span class="keywordflow">if</span> (got == -1) {</div>
 <div class="line">            fprintf(stderr, <span class="stringliteral">&quot;getrand() failed\nCannot get random data\n&quot;</span>);</div>
 <div class="line">    ...</div>
+<div class="ttc" id="aclass_qdremrand_html_af6ea9765138ab65aeee2223d439b607a"><div class="ttname"><a href="class_qdremrand.html#af6ea9765138ab65aeee2223d439b607a">Qdremrand::getrand</a></div><div class="ttdeci">ssize_t getrand(unsigned char *randbuf, size_t randlen)</div><div class="ttdef"><b>Definition</b> qdremrand.h:179</div></div>
 </div><!-- fragment --></li>
 <li><p class="startli">qdremdemo_norm.cpp sets up a distribution with:</p>
-<div class="fragment"><div class="line">Qdremrand qdr;</div>
-<div class="line"><span class="keywordflow">if</span> (qdr.connect(rem_host, rem_port, peer_cert, my_cert, my_key)) {</div>
+<div class="fragment"><div class="line"><a class="code hl_class" href="class_qdremrand.html">Qdremrand</a> qdr;</div>
+<div class="line"><span class="keywordflow">if</span> (qdr.<a class="code hl_function" href="class_qdremrand.html#a4503f5560d79a9ac379c4a68929d7573">connect</a>(rem_host, rem_port, peer_cert, my_cert, my_key)) {</div>
 <div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Cannot connect to QD remote randomness\n&quot;</span>;</div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">}</div>
