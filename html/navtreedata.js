@@ -30,6 +30,7 @@ var NAVTREE =
     [ "Running python demo", "page-runningpythondemo.html", null ],
     [ "Running CPP demo", "page-runningcppdemo.html", null ],
     [ "Running Numpy demo", "page-page-runningnumpydemo.html", null ],
+    [ "Change log", "page-changelog.html", null ],
     [ "How to add Quantum Dice randomness to the Linux /dev/random pool", "page-addingqdrandomnesstolinux.html", null ],
     [ "How to get Client Certificate", "page-generatingclientcertificatedetails.html", null ],
     [ "How to use Quantum Dice randomness in your own code", "page-usingqdrandomnessincode.html", null ],

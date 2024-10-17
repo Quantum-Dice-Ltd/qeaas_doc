@@ -1,13 +1,12 @@
 var searchData=
 [
-  ['happy_20anniversary_0',['Happy anniversary',['../page-generatingclientcertificatedetails.html#autotoc_md27',1,'']]],
-  ['home_1',['Home',['../index.html',1,'']]],
-  ['how_20certificates_20work_2',['How certificates work',['../page-generatingclientcertificatedetails.html#autotoc_md29',1,'']]],
-  ['how_20quantum_20dice_20can_20be_20certain_20that_20someone_20connecting_20is_20really_20you_3',['How Quantum Dice can be certain that someone connecting is really you',['../page-generatingclientcertificatedetails.html#autotoc_md20',1,'']]],
-  ['how_20quantum_20dice_20uses_20certificates_20with_20tls_4',['How Quantum Dice uses certificates with TLS',['../page-generatingclientcertificatedetails.html#autotoc_md18',1,'']]],
-  ['how_20tls_20uses_20certificates_5',['How TLS uses certificates',['../page-generatingclientcertificatedetails.html#autotoc_md17',1,'']]],
-  ['how_20to_20add_20quantum_20dice_20randomness_20to_20the_20linux_20dev_20random_20pool_6',['How to add Quantum Dice randomness to the Linux /dev/random pool',['../page-addingqdrandomnesstolinux.html',1,'']]],
-  ['how_20to_20get_20client_20certificate_7',['How to get Client Certificate',['../page-generatingclientcertificatedetails.html',1,'']]],
-  ['how_20to_20use_20quantum_20dice_20randomness_20in_20your_20own_20code_8',['How to use Quantum Dice randomness in your own code',['../page-usingqdrandomnessincode.html',1,'']]],
-  ['how_20you_20can_20be_20certain_20that_20you_20are_20connecting_20to_20a_20legitimate_20server_9',['How you can be certain that you are connecting to a legitimate server',['../page-generatingclientcertificatedetails.html#autotoc_md19',1,'']]]
+  ['f_0',['F',['../page-changelog.html#autotoc_md21',1,'']]],
+  ['features_1',['Features',['../page-changelog.html#autotoc_md17',1,'']]],
+  ['file_20from_20quantum_20dice_2',['Receive the certificate chain file from Quantum Dice',['../page-generatingclientcertificatedetails.html#autotoc_md31',1,'']]],
+  ['first_20version_20release_3',['First version release',['../page-changelog.html#autotoc_md20',1,'']]],
+  ['fixes_4',['Fixes',['../page-changelog.html#autotoc_md19',1,'']]],
+  ['for_20certificates_20and_20keys_5',['The importance of secrecy and availability for certificates and keys',['../page-generatingclientcertificatedetails.html#autotoc_md36',1,'']]],
+  ['for_20getting_20a_20client_20certificate_6',['Procedures for getting a client certificate',['../page-generatingclientcertificatedetails.html#autotoc_md27',1,'']]],
+  ['from_20quantum_20dice_7',['Receive the certificate chain file from Quantum Dice',['../page-generatingclientcertificatedetails.html#autotoc_md31',1,'']]],
+  ['from_20v1_200_200_20to_20v1_200_201_8',['Changes from v1.0.0 to v1.0.1',['../page-changelog.html#autotoc_md16',1,'']]]
 ];

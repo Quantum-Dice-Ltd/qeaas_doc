@@ -107,37 +107,37 @@ $(function(){initNavTree('page-generatingclientcertificatedetails.html',''); ini
   <div class="headertitle"><div class="title">How to get Client Certificate</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2><a class="anchor" id="autotoc_md16"></a>
+<div class="textblock"><h2><a class="anchor" id="autotoc_md22"></a>
 Introduction</h2>
 <p>Client communication is secured using TLS which uses public/private keys and certificates for authentication. This is an extremely popular protocol which is part of https which is used to secure websites. While you may be familiar with how this all works from setting up a secure website, prior knowledge is not required as everything you need to know is explained here.</p>
 <p>If you are interetested in why certificates work, see the last section., but an understanding of that part is not necessary to use certficates successfully.</p>
 <p>When a client connects to a server, one or both ends may present a certificate to the other to prove who they are. A server presents a certificate so that the client can be sure it is connected to the intended destination. You use this mechanism every time you visit a webpage that is served over https. A client presents a certificate so the server can know who is connecting. While usage in this direction also works perfectly well with https, you will hardly ever find it authenticating clients this way - it's mostly done with passwords which are much less secure. This is partly an accident of history and partly due to the convenience of being able to log in to a website from any device in the world merely by remembering your password.</p>
 <p>The Quantum Dice Entropy-as-a-Service connections use certificates in both directions. Each direction will be explained separately because the setup required is different. You verify the authenticity of the Quantum Dice server using a certificate chain file that you get from Quantum Dice. You simply give this file to the tool or API function which makes the connection. It will use the certificate chain to verify that the connection is genuinely connected to the real Quantum Dice server and has not been intercepted or diverted elsewhere.</p>
 <p>For authenticating yourself to the server, you present a certificate that the server can check. Before explaining the exact procedure you can use to obtain a certificate, it's worth understanding how TLS uses certificates.</p>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 How TLS uses certificates</h2>
 <p>When you have a certificate, it is signed by someone. When you use the certificate to prove your identity to a server, the server checks the integrity of the certificate, so it knows that it is valid and issued by someone who signed it. But the server may not know the issuer, so part of what you actually present is a chain of certificates starting with your own. Each certificate is signed by an issuer whose certificate is the next in the chain. It may seem that a chain must go on forever! It ends with a certificate where the identity being certified is also the issuer - a self-signed certificate also called a root certificate. Obviously, a self-signed certificate can be checked for integrity, but to know if it is authentic the server must rely on something else. And what it relies on is a copy of the same certificate which it already has. For web browsing with https, it is the server who must prove their identity to you, so your web-browser has a store of many (over 100) root certificates that it trusts. Any website that you visit presents a certificate chain which must end in one of these roots.</p>
 <p>Unfortunately, this means that the security of the connection can be broken if any one of the root certificate authorities can be tricked into issuing a bogus certificate (or, indeed, does so deliberately). This has happened, but for web browsing it is very hard to improve the security because so many parties are involved.</p>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 How Quantum Dice uses certificates with TLS</h2>
-<h3><a class="anchor" id="autotoc_md19"></a>
+<h3><a class="anchor" id="autotoc_md25"></a>
 How you can be certain that you are connecting to a legitimate server</h3>
 <p>As already mentioned, you are given a server root certificate which verifies that any tool or API you use is truly connected to the Quantum Dice service. In contrast to web servers, whose certificates are traceable to one of very many root certificate authorities, the Quantum Dice servers use certificates which are traceable to the single Quantum Dice server root certificate which you are given. Therefore nobody except Quantum Dice can issue a certificate that would be accepted by any tool or API that you use. For all practical purposes, the authenticity of the connection depends only on you receiving a true copy of the server certificate. In principle, an attacker could also break into your computer and replace the software with something that either uses their own certificate or just never check anything, but if you have an attacker with that level of control over your computer, your problems are lot more serious than verification of connections to one destination.</p>
-<h3><a class="anchor" id="autotoc_md20"></a>
+<h3><a class="anchor" id="autotoc_md26"></a>
 How Quantum Dice can be certain that someone connecting is really you</h3>
 <p>Quantum Dice needs to verify who you are to ensure that you are not charged for usage that was actually someone else pretending to be you. You verify your identity by presenting a certificate chain when you connect. The root certificate for this chain is held by Quantum Dice. As with the server chain, no third party is involved so the security of the connection cannot be subverted by anyone else.</p>
 <p>As you will know by now, if you have a certificate, it must be signed. The full details are explained below, but the summary is that you create a Certificate Signing Request (CSR), send it to Quantum Dice, who will sign it and return the certificate chain. Your certificate will be itself capable of signing certificates. This means that you can delegate the ability to use the service without having to distribute copies of your top level certificate. The names you choose to certify also allow you to get itemised billing for each leaf certificate traceable up to yours - see below for full details.</p>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
 Procedures for getting a client certificate</h2>
 <p>In these instructions, examples will use the openssl program as it is an open-source program which is very widely available and popular. It is quite easy to find further examples of its use on the Internet. The only disadvantage is that a few things are a bit more complex than they could be, but it's all explained here. You are free to use a different tool if that is more convenient.</p>
 <p>For the purposes of these examples, you are setting up access for a company called Zeffereor who owns the domain zeffereor.com - this is just a random name!</p>
-<h3><a class="anchor" id="autotoc_md22"></a>
+<h3><a class="anchor" id="autotoc_md28"></a>
 Generate your keys</h3>
 <p>Run: </p><div class="fragment"><div class="line">openssl genrsa -out zeffereor.key 4096</div>
 </div><!-- fragment --><p> This generate a 4096-bit RSA key. The NIST recommends using RSA with a minimum of 3072 bits (used to be 2048). Feel free to create keys to your own standards.</p>
-<p>If you want to view the details of a key, you can use this command: </p><div class="fragment"><div class="line">openssl rsa -in OUT/zeffereor.key -text -noout</div>
+<p>If you want to view the details of a key, you can use this command: </p><div class="fragment"><div class="line">openssl rsa -in zeffereor.key -text -noout</div>
 </div><!-- fragment --><p> but unless you know rather a lot about the mechanics of keys, it will not mean much to you. Note that this command shows you everything about a key, so the ability to see the output is sufficient to create a copy of the key. Make sure you don't leave it on a screen where someone could take a photo.</p>
-<h3><a class="anchor" id="autotoc_md23"></a>
+<h3><a class="anchor" id="autotoc_md29"></a>
 Create a certificate signing request</h3>
 <p>Run: </p><div class="fragment"><div class="line">openssl req -new -key zeffereor.key -out zeffereor.csr -subj &quot;/C=UK/O=Zeffereor/OU=ITdept/CN=Randomness&quot; -addext &quot;subjectAltName=email:randomadmin@zeffereor.com&quot;</div>
 </div><!-- fragment --><p> This is a bit long and unwieldy. The first bits are self-explanatory, then we have -subj which specifies who the certificate is issued to. This is an X.400 address which is an essential element in the certificate signing request (CSR). It is not interpreted by Quantum Dice so you can put anything in there which uses these attributes:</p>
@@ -155,22 +155,22 @@ Create a certificate signing request</h3>
 </table>
 <p>These will re-appear in the certificate issued to you, while any others will be discarded. The next part, -addext adds an extension which contains a Subject Alternative Name (SAN). This is the bit used by Quantum Dice to identify clients. It must be formatted as an email address, but it is never used for email, so need not refer to a valid mailbox. You are free to choose anything (composed of letters, digits, dot, or underscore) for the part before the @ while the part after it must be a domain belonging to you. Like with keys, if you are curious you can view the contents of the CSR with the command: </p><div class="fragment"><div class="line">openssl req -in zeffereor.csr -text -noout</div>
 </div><!-- fragment --><p> A CSR does not need to be kept secret.</p>
-<h3><a class="anchor" id="autotoc_md24"></a>
+<h3><a class="anchor" id="autotoc_md30"></a>
 Send the CSR to Quantum Dice</h3>
 <p>Depending on your desired level of security, you might email it, put it on a cloud platform, send it on a USB stick via a courier, or something else. Speak to your account manager to arrange something suitable. If an attacker could intercept and replace the request, they could get a certificate issued which would allow them to impersonate you by replacing the public key in the CSR with their own.</p>
-<h3><a class="anchor" id="autotoc_md25"></a>
+<h3><a class="anchor" id="autotoc_md31"></a>
 Receive the certificate chain file from Quantum Dice</h3>
 <p>The certificate chain file will be sent to you by suitable means. Speak to your account manager to arrange the means and address to use. The security of the reply is not important. You present your certificate to prove your identity, but a copy is useless to an attacker unless they also have your private key.</p>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2><a class="anchor" id="autotoc_md32"></a>
 Use the certificate chain directly</h2>
 <p>You can now use the certificate chain file, zeffereor.pem directly:</p>
 <div class="fragment"><div class="line">python3 qdremdemo.py qeaas.quantum-dice.com 20804 qdsrvroot.pem zeffereor.pem zeffereor.key</div>
 </div><!-- fragment --><p> If you are curious about what's in a key, you can view the contents with this command:</p>
 <div class="fragment"><div class="line">openssl x509 -in zeffereor.pem -text -noout</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md27"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md33"></a>
 Happy anniversary</h2>
 <p>If you are sufficiently familiar with the openssl command, you may have wondered why we generated the key separately instead of using the -newkey option to the openssl req command. This is because certificates expire, and you will need to renew your certificate. At that point, you already have a key and there is no need to change it - in fact, it's undesirable to change it as keeping the same key allows you to overlap the use of the old and new certificates. So when you need to renew the certificate, you just create another CSR and use it to get a fresh certificate and replace the expiring certificate at any time before it expires. This is more important if you have signed subordinate certificates which need to use your new certifcate in their chain.</p>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md34"></a>
 Use the certificate to sign subordinate certificates</h2>
 <p>One extremely useful feature of certificate authentication is that it allows you to create subordinate certificates for others, who can then use the service but can be separately identified (if you have the appropriate procedures in place).</p>
 <p>Before signing any certificates, it is necessary to set up a suitable directory for openssl to keep track of what it does. You can do this with: </p><div class="fragment"><div class="line">mkdir Zeffereor_ca OUT</div>
@@ -221,7 +221,7 @@ Use the certificate to sign subordinate certificates</h2>
 </div><!-- fragment --><p> Here, the time to expiry of their certificate can be specified in days. Running this command gives you their certificate in emorts.pem as a single certificate. This cannot be used by itself - it needs to be presented as the start of a chain of certificates leading to the root. Create the whole chain with:</p>
 <div class="fragment"><div class="line">cat emorts.pem zeffereor.pem &gt;emorts_chain.pem</div>
 </div><!-- fragment --><p>and send the Emorts team their certificate chain file emorts_chain.pem urging them to test it right away. Be prepared to renew their certificate when it expires in accordance with the lifetime in days that you specified. When your certificate expires, and you get a new one, you can simply replace the old one in the chain file, though if the subordinate certificate is of similar lifetime, it may be more efficient to renew that one also.</p>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md35"></a>
 How certificates work</h2>
 <p>This material is mainly for interest - you do not need to know it merely to use certificates.</p>
 <p>The kind of certificates used by TLS rely on public key cryptography. This is cryptography whereby keys come in pairs: a public part and a private part. The private part is known only to the key owner, while the public part is published. In principle, nothing else is needed, and such simple systems have been used, but are very inconvenient because of the risk that an attacker might pretend that one of their public keys is really yours, so when people try to secure communications intended for you, they use the attacker's key and inadvertantly allow the attacker to decode any message. The attacker can then pass a modified message on to you and similarly in the revserse direction. So we really need a way to verify that a key is yours.</p>
@@ -233,15 +233,15 @@ How certificates work</h2>
 <p>You can be certain that Carol signed Bob's certificate, because you have a certificate which guarantees that the public key used belongs to Carol. That was signed by David.</p>
 <p>At this point you might guess we have to go on forever, but eventually we get to a certificate, let's assume it's David's, which was signed by the key it is guaranteeing -so David's certificate is signed by David. While this does stop the chain becoming infinite, it doesn't seem very useful. By itself, in fact, it guarantees nothing. However, if you can get David's certificate from David by some secure means, so you already know it is genuine, then it can be used to guarantee the whole chain. And this is how https websites work, which transport the data over TLS. Each browser and operating system have many such self-signed root certificates (over 100), and the issuers of these certifcates sign, directly or indirectly, all the certificates which secure HTTPS websites.</p>
 <p>The remaining weakness is that you and Alice must completely trust David, Carol, and Bob. Is any one of them is willing to issue a false certificate, then you can be deceived into communicating with an attacker instead of Alice. The only defence against this is to restrict the set of certificate issuers to those completely trusted. This is why the Quantum Dice Entropy as a Service certificates rely only on Quantum Dice itself, so no third party is trusted.</p>
-<h3><a class="anchor" id="autotoc_md30"></a>
+<h3><a class="anchor" id="autotoc_md36"></a>
 The importance of secrecy and availability for certificates and keys</h3>
 <p>There are two ways for a certificate and its key to fail:</p>
 <p>The key is lost, so nobody has it The key is disclosed so too many people have it In accordance with Kerckhoffs's principle for a good cryptosystem, the TLS scheme of certificates and keys minimises the parts which need to be kept secret, and also further limits the consequences of failure for many cases.</p>
-<h4><a class="anchor" id="autotoc_md31"></a>
+<h4><a class="anchor" id="autotoc_md37"></a>
 Loss of a key</h4>
 <p>If a (private) key is lost (public keys can be derived from the corresponding private key, so cannot be lost), then if it belongs to a certificate issuer, they can no longer sign certificates. Whoever it belongs to also can no longer use their own certificate to secure communications links because they would be unable to decrypt anything received (and for most protocols this is an essential step in merely setting up the channel). Obviously, recovery means you must generate a new key. What more is needed depends on whether you're a root certificate authority or not. If not, you merely get a new certificate certifying that the new key is yours. This does not conflict with or invalidate any certificates that you have already issued. In the above example, if Alice loses her private key, she generates a new one, gets a new certificate from Bob, and can continue as before. Similarly if Bob loses his key, only Bob needs to take action. When certificates that Bob previously signed are nearing expiry, their holders will ask Bob to sign new ones, which can be done with Bob's new key, so this does not add any extra work.</p>
 <p>However, if David loses his private key, the consequences are grave. While he can easily generate a new key and sign it, the new root certificate then needs to be securely distributed to all the places that were using his old one. This can be a significant amount of work.</p>
-<h4><a class="anchor" id="autotoc_md32"></a>
+<h4><a class="anchor" id="autotoc_md38"></a>
 Key disclosure</h4>
 <p>If a (private) key is disclosed, the consequences are worse than mere loss. Using the key, anyone can present the corresponding certificate (which has been freely given to anyone seeking to autheticate its holder) and impersonate the original owner. There are two mitigations, neither of which are very satisfactory:</p>
 <ol type="1">
@@ -250,7 +250,7 @@ Key disclosure</h4>
 </ol>
 <p>Revocation of a certificate involves adding it to a certificate revocation list (CRL) which is checked by anyone who is intending to rely on it. The advantage of this is that the opportunity to exploit a disclosed key is restricted to a small span of time. The disadvantage is that there must be a mechanism to distribute CRLs to everyone who might intend relying on the certificate, which is an onerous burden.</p>
 <p>And, of course, if your key gets disclosed and you revoke its certificate, you also have the work involved in dealing with loss of a key.</p>
-<h4><a class="anchor" id="autotoc_md33"></a>
+<h4><a class="anchor" id="autotoc_md39"></a>
 Asymmetry of consequences</h4>
 <p>Since key disclosure is much worse than key loss, best practice is to generate a key on one machine and never let it leave that machine, even for backups (except for root keys). If it is lost, it is sufficiently easy to replace that it is not critical that it be saved on a backup. </p>
 </div></div><!-- contents -->

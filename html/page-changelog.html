@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Quantum Dice QEaaS API: Getting Started</title>
+<title>Quantum Dice QEaaS API: Change log</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -78,7 +78,7 @@ $(function() { codefold.init(0); });
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('page-gettingstarted.html',''); initResizable(true); });
+$(function(){initNavTree('page-changelog.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -104,26 +104,32 @@ $(function(){initNavTree('page-gettingstarted.html',''); initResizable(true); })
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Getting Started</div></div>
+  <div class="headertitle"><div class="title">Change log</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1 empty">
     <ul>
-      <li class="level2 empty">
+      <li class="level2">
+        <a href="#autotoc_md16">Changes from v1.0.0 to v1.0.1</a>
         <ul>
           <li class="level3">
-            <a href="#autotoc_md2">Overview</a>
+            <a href="#autotoc_md17">Features</a>
           </li>
           <li class="level3">
-            <a href="#autotoc_md3">Prerequisites</a>
+            <a href="#autotoc_md18">improvement</a>
           </li>
           <li class="level3">
-            <a href="#autotoc_md4">Getting a client certificate</a>
+            <a href="#autotoc_md19">Fixes</a>
           </li>
+        </ul>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md20">First version release</a>
+        <ul>
           <li class="level3">
-            <a href="#autotoc_md5">Next steps</a>
+            <a href="#autotoc_md21">F</a>
           </li>
         </ul>
       </li>
@@ -131,45 +137,29 @@ $(function(){initNavTree('page-gettingstarted.html',''); initResizable(true); })
   </li>
 </ul>
 </div>
-<div class="textblock"><h3><a class="anchor" id="autotoc_md2"></a>
-Overview</h3>
-<p>This page provides explanation on how to start using the programming interface of the <a class="el" href="qdremrand_8h.html">Quantum Dice QEaaS</a> API.</p>
-<h3><a class="anchor" id="autotoc_md3"></a>
-Prerequisites</h3>
-<p>You will need the following:</p>
-<ol type="1">
-<li>Host: This can be either of the following.<ol type="a">
-<li>A Linux machine with development tools to build C++ programs to run the C++ client demo</li>
-<li>Any other machine with python3 to run the python demo</li>
-</ol>
-</li>
-<li>The openssl command or an alternative tool for generating keys and certificate signing requests</li>
-<li>The client software <b> qdicerem.tgz </b>. Download <a href="https://github.com/Quantum-Dice-Ltd/qeaas_sdk/releases">here</a></li>
-<li>The address and port for the server <b> qeaas.q-dice.com 20804 </b></li>
-<li>The server root certificate (<em>included in qdicerem.tgz</em>)</li>
-<li>Your certificate and corresponding key, see <a class="el" href="#getting-a-client-certificate">Getting a client certificate</a> for more information on this</li>
-</ol>
-<p><a class="anchor" id="getting-a-client-certificate"></a></p>
-<h3><a class="anchor" id="autotoc_md4"></a>
-Getting a client certificate</h3>
-<p>In summary, if you are the randomness administrator (randomadmin) for Zeffereor Inc (<em>an imaginary company</em>), run these commands to generate a key and a certificate signing request</p>
-<ol type="1">
-<li><p class="startli">Generate key</p>
-<div class="fragment"><div class="line">openssl genrsa -out zeffereor.key 4096</div>
-</div><!-- fragment --></li>
-<li><p class="startli">Generate certificate signing request</p>
-<div class="fragment"><div class="line">openssl req -new -key zeffereor.key -out zeffereor.csr -subj &quot;/C=UK/O=Zeffereor/OU=ITdept/CN=Randomness&quot; -addext &quot;subjectAltName=email:randomadmin@zeffereor.com&quot;</div>
-</div><!-- fragment --></li>
-<li>Send the signing request ( the <code>zeffereor.csr</code> file ) to Quantum Dice who will create your client certificate chain <code>zeffereor_chain.pem</code> and send it to you.</li>
-</ol>
-<p>See <a class="el" href="page-generatingclientcertificatedetails.html">Details on generating client certificate</a> for more details on how to generate a key and get a certificate.</p>
-<dl class="section note"><dt>Note</dt><dd>It is best practice to ensure that the key never leaves the machine where it is generated.</dd></dl>
-<h3><a class="anchor" id="autotoc_md5"></a>
-Next steps</h3>
+<div class="textblock"><p>This page show what has changed in the sdk. See <a href="https://github.com/Quantum-Dice-Ltd/qeaas_sdk/releases">Download Page</a> to download any of the release versions</p>
+<h2><a class="anchor" id="autotoc_md16"></a>
+Changes from v1.0.0 to v1.0.1</h2>
+<p>This version introduces minor bug fixes</p>
+<h3><a class="anchor" id="autotoc_md17"></a>
+Features</h3>
 <ul>
-<li><a class="el" href="page-runningpythondemo.html">Run the python demo</a></li>
-<li><a class="el" href="page-runningcppdemo.html">Run the C/Cpp demo</a> </li>
+<li>Some features</li>
 </ul>
+<h3><a class="anchor" id="autotoc_md18"></a>
+improvement</h3>
+<ul>
+<li>Some improvements</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md19"></a>
+Fixes</h3>
+<ul>
+<li>Fixed returning too few bytes from python API</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md20"></a>
+First version release</h2>
+<h3><a class="anchor" id="autotoc_md21"></a>
+F</h3>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['importance_20of_20secrecy_20and_20availability_20for_20certificates_20and_20keys_0',['The importance of secrecy and availability for certificates and keys',['../page-generatingclientcertificatedetails.html#autotoc_md30',1,'']]],
-  ['in_20c_20code_1',['in C code',['../page-usingqdrandomnessincode.html#autotoc_md34',1,'Using Quantum Dice randomness in C code'],['../page-usingqdrandomnessincode.html#autotoc_md35',1,'Using Quantum Dice randomness in C++ code']]],
-  ['in_20python_20code_2',['Using Quantum Dice randomness in python code',['../page-usingqdrandomnessincode.html#autotoc_md36',1,'']]],
-  ['in_20your_20own_20code_3',['How to use Quantum Dice randomness in your own code',['../page-usingqdrandomnessincode.html',1,'']]],
-  ['introduction_4',['Introduction',['../page-generatingclientcertificatedetails.html#autotoc_md16',1,'']]],
-  ['is_20really_20you_5',['How Quantum Dice can be certain that someone connecting is really you',['../page-generatingclientcertificatedetails.html#autotoc_md20',1,'']]]
+  ['generate_20your_20keys_0',['Generate your keys',['../page-generatingclientcertificatedetails.html#autotoc_md28',1,'']]],
+  ['get_20client_20certificate_1',['How to get Client Certificate',['../page-generatingclientcertificatedetails.html',1,'']]],
+  ['getrand_2',['getrand',['../class_qdremrand.html#af6ea9765138ab65aeee2223d439b607a',1,'Qdremrand']]],
+  ['getrandbits_3',['getrandbits',['../classqdremrand_1_1_q_d_rem_rand.html#a2a3638bfc4e951e1779d1b739fa6bbee',1,'qdremrand::QDRemRand']]],
+  ['getstate_4',['getstate',['../classqdremrand_1_1_q_d_rem_rand.html#a42c431d67192ccd3b5f41e53a2427bcf',1,'qdremrand::QDRemRand']]],
+  ['getting_20a_20client_20certificate_5',['Getting a client certificate',['../page-gettingstarted.html#autotoc_md4',1,'']]],
+  ['getting_20a_20client_20certificate_6',['Procedures for getting a client certificate',['../page-generatingclientcertificatedetails.html#autotoc_md27',1,'']]],
+  ['getting_20started_7',['Getting Started',['../page-gettingstarted.html',1,'']]]
 ];
