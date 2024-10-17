@@ -14,7 +14,7 @@ var searchData=
   ['pendrand_11',['pendrand',['../struct_q_d_r_e_m_r_a_n_d.html#a99b49cbcb9ebea5bec2dd9d73f411383',1,'QDREMRAND']]],
   ['pool_12',['How to add Quantum Dice randomness to the Linux /dev/random pool',['../page-addingqdrandomnesstolinux.html',1,'']]],
   ['prerequisites_13',['Prerequisites',['../page-gettingstarted.html#autotoc_md3',1,'']]],
-  ['procedures_20for_20getting_20a_20client_20certificate_14',['Procedures for getting a client certificate',['../page-generatingclientcertificatedetails.html#autotoc_md27',1,'']]],
-  ['python_20code_15',['Using Quantum Dice randomness in python code',['../page-usingqdrandomnessincode.html#autotoc_md42',1,'']]],
+  ['procedures_20for_20getting_20a_20client_20certificate_14',['Procedures for getting a client certificate',['../page-generatingclientcertificatedetails.html#autotoc_md25',1,'']]],
+  ['python_20code_15',['Using Quantum Dice randomness in python code',['../page-usingqdrandomnessincode.html#autotoc_md40',1,'']]],
   ['python_20demo_16',['Running python demo',['../page-runningpythondemo.html',1,'']]]
 ];
